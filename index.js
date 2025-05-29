@@ -19,14 +19,14 @@ connectDB();
 app.use(express.json());
 
 // Configure CORS middleware
-// app.use(
-//   cors({
-//     origin: ["https://kartalucia.com", "http://localhost:3000"],
-//     credentials: true,
-//   })
-// ); // Allow all CORS requests by default
+app.use(
+  cors({
+    origin: ["https://test-back-j27h.vercel.app", "http://localhost:3000"],
+    credentials: true,
+  })
+); // Allow all CORS requests by default
 
-app.use(cors());
+// app.use(cors());
 // Allow all CORS requests by default
 app.use("/api/portfolio", portfolioRouter);
 app.use("/api/testimonials", testimonialsRouter);
