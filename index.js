@@ -26,9 +26,8 @@ app.use(express.json());
 //   })
 // ); // Allow all CORS requests by default
 
-app.use(
-  cors()
-); // Allow all CORS requests by default
+app.use(cors());
+// Allow all CORS requests by default
 app.use("/api/portfolio", portfolioRouter);
 app.use("/api/testimonials", testimonialsRouter);
 app.use("/api/client", clientRouter);
