@@ -45,6 +45,9 @@ async function connect() {
   }
 }
 
+app.get("/",(req,res)=>{
+  res.send("I am running");
+})
 
 
 // app.get("/*", (req, res) => {
