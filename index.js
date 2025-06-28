@@ -21,7 +21,7 @@ app.use(express.json());
 // Configure CORS middleware
 app.use(
   cors({
-    origin: ["https://test-back-j27h.vercel.app", "http://localhost:3000"],
+    origin: ["https://test-front-flame.vercel.app", "http://localhost:3000"],
     credentials: true,
   })
 ); // Allow all CORS requests by default
