@@ -21,10 +21,14 @@ app.use(express.json());
 // Configure CORS middleware
 app.use(
   cors({
-    origin: ["https://test-front-flame.vercel.app", "http://localhost:3000","https://www.kartalucia.com"],
+    origin: [
+      "https://test-front-flame.vercel.app", 
+      "http://localhost:3000",
+      "https://www.kartalucia.com"  
+    ],
     credentials: true,
   })
-); // Allow all CORS requests by default
+);// Allow all CORS requests by default
 
 // app.use(cors());
 // Allow all CORS requests by default
