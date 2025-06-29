@@ -27,7 +27,7 @@ const loginAdmin = async (req, res) => {
     const admin = await Admin.findOne( {
     email, 
     password, 
-   } ).sort({ createdAt: -1 }).exec();
+   } );
 
    if (!admin) {
     return sendFailureResponse(res, 'Email or Password is Incorrect', 404);
