@@ -20,14 +20,15 @@ const createAdmin = async (req, res) => {
 };
 
 const loginAdmin = async (req, res) => {
+  console.log('Login request received');
   try {
-
+ console.log('Login attempt with body:', req.body);
     const { email, password } = req.body;
 
     const admin = await Admin.findOne( {
     email, 
     password, 
-   } );
+   } ).sort({ createdAt: -1 }).exec();
 
    if (!admin) {
     return sendFailureResponse(res, 'Email or Password is Incorrect', 404);
@@ -39,6 +40,7 @@ const loginAdmin = async (req, res) => {
    'fullName': admin.fullName
    };
 
+   console.log(payload);
    const token = generateToken(payload, process.env.JWT_SECRET_KEY, expiresIn);
 
     return sendSuccessResponse(res, 'Admin Login successfully', { 
